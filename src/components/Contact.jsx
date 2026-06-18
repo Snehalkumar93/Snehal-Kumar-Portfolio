@@ -17,18 +17,28 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate network request
+
+    const formData = new FormData(e.target);
+    const firstName = formData.get('firstName') || '';
+    const lastName = formData.get('lastName') || '';
+    const email = formData.get('email') || '';
+    const message = formData.get('message') || '';
+
+    const subject = encodeURIComponent(`Portfolio Contact from ${firstName} ${lastName}`);
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:Snehal.kumar633@gmail.com?subject=${subject}&body=${body}`;
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      
-      // Reset after 5 seconds
       setTimeout(() => {
         setIsSubmitted(false);
-        e.target.reset(); // Reset form fields
+        e.target.reset();
       }, 5000);
-    }, 1500);
+    }, 800);
   };
 
   return (
@@ -80,25 +90,31 @@ const Contact = () => {
               <div className="flex-1 flex flex-col gap-10">
                 <div className="relative">
                   <input 
-                    type="text" 
+                    type="text"
+                    name="firstName"
                     id="firstName" 
-                    placeholder="First Name" 
+                    placeholder="First Name"
+                    required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
                 <div className="relative">
                   <input 
-                    type="text" 
+                    type="text"
+                    name="lastName"
                     id="lastName" 
-                    placeholder="Last Name" 
+                    placeholder="Last Name"
+                    required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
                 <div className="relative">
                   <input 
-                    type="email" 
+                    type="email"
+                    name="email"
                     id="email" 
-                    placeholder="Email" 
+                    placeholder="Email"
+                    required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
@@ -108,8 +124,10 @@ const Contact = () => {
               <div className="flex-1 flex flex-col">
                 <div className="relative h-full flex flex-col">
                   <textarea 
+                    name="message"
                     id="message" 
-                    placeholder="Type your message here" 
+                    placeholder="Type your message here"
+                    required
                     className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium resize-none rounded-none"
                   ></textarea>
                 </div>

@@ -18,7 +18,7 @@ const Footer = () => {
         </div>
         
         <div className="flex flex-col gap-1 md:items-end">
-          <p>Kanpur, Uttar Pradesh</p>
+          <p>Lucknow, India</p>
           <p>{new Date().getFullYear()}</p>
         </div>
       </div>

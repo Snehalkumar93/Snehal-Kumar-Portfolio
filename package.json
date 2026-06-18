@@ -1,5 +1,5 @@
 {
-  "name": "video_portfolio",
+  "name": "snehal-kumar-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,8 +13,6 @@
     "@tailwindcss/vite": "^4.3.0",
     "aos": "^2.3.4",
     "framer-motion": "^12.40.0",
-    "pdf-parse": "^2.4.5",
-    "pdfjs-dist": "^4.0.379",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "tailwindcss": "^4.3.0"

@@ -82,7 +82,7 @@ const About = () => {
             <span className="text-black font-extrabold">
               Allenhouse Institute of Technology
             </span>{' '}
-            based in Kanpur, Uttar Pradesh. I have hands-on experience in developing
+            based in Lucknow, India. I have hands-on experience in developing
             innovative software solutions. Skilled in web development, AI integration,
             and database management, with a strong foundation in programming and
             problem-solving.

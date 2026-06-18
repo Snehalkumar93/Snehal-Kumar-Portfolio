@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://videoportfolio-iota.vercel.app/sitemap.xml
