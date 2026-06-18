@@ -34,6 +34,7 @@ const About = () => {
   return (
     <section
       id="about"
+      aria-label="About Snehal Kumar"
       className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
@@ -56,7 +57,8 @@ const About = () => {
               <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
                 <img
                   src={stackImage}
-                  alt="Profile"
+                  alt="Snehal Kumar - Computer Science Engineering student"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

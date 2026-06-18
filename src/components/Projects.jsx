@@ -82,6 +82,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
+      aria-label="Featured projects"
       className="bg-[#050505] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans"
     >
       {/* Dynamic Background Pattern */}
@@ -149,7 +150,8 @@ const Projects = () => {
                     <div className="absolute top-8 md:top-10 left-0 w-full h-[calc(100%-2rem)] md:h-[calc(100%-2.5rem)] overflow-hidden">
                       <img 
                         src={project.image} 
-                        alt={project.title}
+                        alt={`Screenshot of ${project.title} project`}
+                        loading="lazy"
                         className="w-full h-full object-cover object-top transform transition-transform duration-700 group-hover:scale-105"
                       />
                       {/* Subtle gradient to fade bottom if needed */}

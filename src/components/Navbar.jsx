@@ -21,6 +21,8 @@ const Navbar = () => {
 
   return (
     <nav 
+      role="navigation"
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isOpen 
           ? 'bg-[#ff2a2a] py-4'
@@ -58,9 +60,11 @@ const Navbar = () => {
           <a 
             href="/Resume_Snehal_Kumar.pdf"
             download="Snehal_Kumar_Resume.pdf"
+            rel="noopener noreferrer"
+            target="_blank"
             className="px-6 py-2.5 rounded-full bg-[#ff2a2a] border border-[#ff2a2a] text-white font-semibold hover:bg-[#e02525] hover:shadow-[0_0_20px_rgba(255,42,42,0.4)] transition-all duration-300 flex items-center gap-2"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             Resume
@@ -71,9 +75,11 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
             className="text-white focus:outline-none p-2"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               {isOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -105,10 +111,12 @@ const Navbar = () => {
              <a 
                href="/Resume_Snehal_Kumar.pdf"
                download="Snehal_Kumar_Resume.pdf"
+               rel="noopener noreferrer"
+               target="_blank"
                onClick={() => setIsOpen(false)} 
                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
              >
-               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                </svg>
                Download Resume

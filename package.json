@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://videoportfolio-iota.vercel.app/",
+  "description": "Portfolio of Snehal Kumar – Full Stack Developer",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,6 +14,8 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "aos": "^2.3.4",
     "framer-motion": "^12.40.0",
     "react": "^19.2.6",

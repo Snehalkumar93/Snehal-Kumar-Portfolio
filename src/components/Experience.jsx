@@ -100,6 +100,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
+      aria-label="Experience and Education"
       className="bg-[#0a0a0a] pt-24 pb-32 px-6 md:px-12 w-full relative overflow-hidden font-sans"
     >
       {/* Subtle grid background */}
