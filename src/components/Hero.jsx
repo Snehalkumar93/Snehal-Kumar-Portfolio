@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-[#050505]">
+    <section id="home" className="relative w-full min-h-screen overflow-hidden bg-[#050505]">
       {/* Dynamic Animated Background without Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {/* Subtle grid pattern */}
@@ -39,7 +39,7 @@ const Hero = () => {
       </div>
 
       {/* Content Container */}
-      <div className="absolute inset-0 z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col md:flex-row justify-end md:justify-between items-center text-left w-full h-full pt-20">
+      <div className="relative z-20 px-6 pb-20 md:pb-[8%] md:px-12 max-w-7xl mx-auto flex flex-col-reverse md:flex-row justify-center md:justify-between items-center text-left w-full min-h-screen pt-28 md:pt-20">
         
         {/* Left Side: Text and Buttons */}
         <div className="flex flex-col items-start text-left max-w-2xl w-full relative z-30">
@@ -129,7 +129,7 @@ const Hero = () => {
         </div>
 
         {/* Right Side: Animated Floating Avatar */}
-        <div className="hidden md:flex w-full lg:w-1/2 justify-center lg:justify-end items-center relative z-20 mt-12 md:mt-0 perspective-1000">
+        <div className="flex w-full lg:w-1/2 justify-center lg:justify-end items-center relative z-20 mb-12 md:mb-0 perspective-1000">
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotateY: 30 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -152,7 +152,7 @@ const Hero = () => {
             <motion.div
               animate={{ y: [-15, 15, -15] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-72 h-72 lg:w-[400px] lg:h-[400px] rounded-full p-2 bg-gradient-to-br from-[#ff2a2a] to-black shadow-[0_0_50px_rgba(255,42,42,0.3)] overflow-hidden"
+              className="relative w-56 h-56 md:w-72 md:h-72 lg:w-[400px] lg:h-[400px] rounded-full p-2 bg-gradient-to-br from-[#ff2a2a] to-black shadow-[0_0_50px_rgba(255,42,42,0.3)] overflow-hidden"
             >
               <div className="w-full h-full rounded-full overflow-hidden border-4 border-black relative">
                 <img 
