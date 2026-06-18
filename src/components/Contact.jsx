@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Contact = () => {
@@ -10,6 +10,26 @@ const Contact = () => {
   
   // Parallax translation for the big text
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "30%"]);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate network request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      
+      // Reset after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        e.target.reset(); // Reset form fields
+      }, 5000);
+    }, 1500);
+  };
 
   return (
     <section ref={ref} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-gray-900">
@@ -33,10 +53,28 @@ const Contact = () => {
           className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
         >
           <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
-            Reach Us
+            Get In Touch
           </div>
 
-          <form className="flex flex-col gap-12 md:gap-16 w-full">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-12 md:gap-16 w-full relative">
+            
+            {/* Success Overlay */}
+            {isSubmitted && (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="absolute inset-0 z-50 bg-[#ff2a2a] flex flex-col items-center justify-center text-center"
+              >
+                <div className="w-20 h-20 rounded-full border-4 border-white flex items-center justify-center mb-6">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-3xl font-black text-white mb-2 tracking-tight">Message Sent!</h3>
+                <p className="text-white/80 font-medium">Thank you for reaching out. I'll get back to you soon.</p>
+              </motion.div>
+            )}
+
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
               {/* Left Column */}
               <div className="flex-1 flex flex-col gap-10">
@@ -96,21 +134,25 @@ const Contact = () => {
               {/* Right text & button */}
               <div className="flex-1 flex flex-col gap-8 text-xs text-white/70 font-medium">
                 <p className="leading-relaxed max-w-[400px]">
-                  This site is protected by reCAPTCHA and the Google <a href="#" className="underline hover:text-white transition-colors">Privacy Policy</a> and <a href="#" className="underline hover:text-white transition-colors">Terms of Service</a> apply.
+                  You can also reach me directly at <a href="mailto:Snehal.kumar633@gmail.com" className="underline hover:text-white transition-colors font-bold">Snehal.kumar633@gmail.com</a> or call <a href="tel:+917518575573" className="underline hover:text-white transition-colors font-bold">+91 7518575573</a>.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
-                  <p className="max-w-[250px] leading-relaxed">
-                    For information on how to unsubscribe, please review our <a href="#" className="underline hover:text-white transition-colors">privacy policy</a>.
-                  </p>
+                  <div className="flex gap-4">
+                    <a href="https://github.com/Snehalkumar93" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">GitHub</a>
+                    <a href="https://linkedin.com/in/snehal-kumar93" target="_blank" rel="noopener noreferrer" className="underline hover:text-white transition-colors">LinkedIn</a>
+                  </div>
                   
                   <button 
                     type="submit" 
-                    className="px-8 py-3 rounded-full border border-white/40 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#ff2a2a] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto"
+                    disabled={isSubmitting}
+                    className="px-8 py-3 rounded-full border border-white/40 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#ff2a2a] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Send
-                    <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    {isSubmitting ? 'Sending...' : 'Send'}
+                    {!isSubmitting && (
+                      <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    )}
                   </button>
                 </div>
               </div>

@@ -17,7 +17,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = ['Home', 'About', 'Experience', 'Projects', 'Contact'];
 
   return (
     <nav 
@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
           <a href="#" className="text-white text-2xl font-black tracking-tight">
-            Leeshark<span className="text-red-500">.</span>
+            Snehal<span className="text-red-500">.</span>
           </a>
         </div>
 
@@ -53,13 +53,17 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Right Side: CTA Button */}
+        {/* Right Side: Download Resume Button */}
         <div className="hidden md:block">
           <a 
-            href="#contact" 
-            className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
+            href="/Resume_Snehal_Kumar.pdf"
+            download="Snehal_Kumar_Resume.pdf"
+            className="px-6 py-2.5 rounded-full bg-[#ff2a2a] border border-[#ff2a2a] text-white font-semibold hover:bg-[#e02525] hover:shadow-[0_0_20px_rgba(255,42,42,0.4)] transition-all duration-300 flex items-center gap-2"
           >
-            Hire Me
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Resume
           </a>
         </div>
 
@@ -99,11 +103,15 @@ const Navbar = () => {
           ))}
           <div className="pt-4 pb-2">
              <a 
-               href="#contact" 
+               href="/Resume_Snehal_Kumar.pdf"
+               download="Snehal_Kumar_Resume.pdf"
                onClick={() => setIsOpen(false)} 
-               className="inline-block px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
+               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-[#ff2a2a] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
              >
-               Hire Me
+               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+               </svg>
+               Download Resume
              </a>
           </div>
         </div>
