@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-white text-4xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tighter"
           >
-            Hi, I'm Snehal <span className="text-[#ff2a2a]">Kumar</span>
+            <span className="whitespace-nowrap">Hi, I'm Snehal <span className="text-[#ff2a2a]">Kumar</span></span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-500">
               Software Engineer
