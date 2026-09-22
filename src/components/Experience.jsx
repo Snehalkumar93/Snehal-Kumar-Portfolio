@@ -47,12 +47,11 @@ const timelineData = [
 
 const trainings = [
   { name: 'Data Structures & Algorithms Training', year: '2025' },
-  { name: 'Mathematics & Logic in Computer Science', year: '' },
-  { name: 'SWAMLCS-24 – Applications of Mathematics & Logic in CS', year: 'Aug 2024' },
-  { name: 'E-Summit\'24 – IIT Kanpur Entrepreneurship Cell', year: 'Jan 2025' },
-  { name: 'Competitive Programming Workshop – GFG', year: '2025' },
-  { name: 'Career Guidance Webinar – E-Cell IIT Hyderabad', year: '2025' },
-  { name: 'Generative AI Mastery Workshop (GenAI Buildathon)', year: 'Aug 2025' },
+  { name: 'SWAMLCS-24 : Workshop on Applications of Mathematics and Logic in CS, AIT Kanpur', year: 'Aug 2024' },
+  { name: 'E-Summit\'24 : IIT Kanpur Entrepreneurship Cell', year: 'Jan 2024' },
+  { name: 'Competitive Programming Workshop : GeeksforGeeks', year: '2025' },
+  { name: 'Career Guidance Webinar : E-Cell IIT Hyderabad & Skill Dunia Edutech', year: '2025' },
+  { name: 'GenAI Buildathon : NEXT Wave, OpenAI Academy Learning Community', year: 'Aug 2025' },
 ];
 
 const achievements = [
@@ -195,31 +194,37 @@ const Experience = () => {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {trainings.map((t, i) => (
-              <motion.div
-                key={i}
-                data-aos="fade-up"
-                data-aos-delay={i * 80}
-                whileHover={{ y: -3 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-                className="bg-gray-800/50 border border-gray-700 rounded-xl p-5 hover:border-[#ff2a2a]/40 hover:bg-gray-800/80 transition-all duration-300 group cursor-default"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="mt-0.5 text-[#ff2a2a] opacity-60 group-hover:opacity-100 transition-opacity">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="text-white text-sm font-semibold leading-snug">{t.name}</p>
-                    {t.year && (
-                      <p className="text-gray-500 text-xs font-medium mt-1">{t.year}</p>
-                    )}
+          <div className="relative w-full overflow-hidden py-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            {/* Gradient masks for smooth fade out at edges */}
+            <div className="absolute top-0 left-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 right-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+            
+            <motion.div
+              className="flex gap-4 sm:gap-6 w-max"
+              animate={{ x: ['0%', '-50%'] }}
+              transition={{ repeat: Infinity, ease: 'linear', duration: 25 }}
+            >
+              {[...trainings, ...trainings].map((t, i) => (
+                <div
+                  key={i}
+                  className="w-[280px] sm:w-[320px] bg-gray-800/50 border border-gray-700 rounded-xl p-5 hover:border-[#ff2a2a]/40 hover:bg-gray-800/80 transition-all duration-300 group cursor-default shrink-0"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 text-[#ff2a2a] opacity-60 group-hover:opacity-100 transition-opacity shrink-0">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="text-white text-sm font-semibold leading-snug whitespace-normal">{t.name}</p>
+                      {t.year && (
+                        <p className="text-gray-500 text-xs font-medium mt-1">{t.year}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </div>
         </div>
 

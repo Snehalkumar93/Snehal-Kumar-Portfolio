@@ -72,11 +72,11 @@ const About = () => {
           data-aos-delay="200"
           className="flex-1 text-white mt-8 md:mt-0 relative z-20"
         >
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">
-            Hello!
+          <h2 className="text-4xl md:text-5xl font-black text-black mb-4 uppercase tracking-tight">
+            About Me
           </h2>
           <p className="text-lg font-bold mb-10 leading-relaxed max-w-3xl text-red-50">
-            Hi, my name is{' '}
+            I am{' '}
             <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">
               Snehal Kumar
             </span>

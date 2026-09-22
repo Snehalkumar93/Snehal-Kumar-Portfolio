@@ -370,7 +370,7 @@ const SlideCard = ({ project }) => {
 
 /* ───────────────────────── MAIN COMPONENT ───────────────────────── */
 
-const AUTOPLAY_INTERVAL = 5000; // 5 seconds
+const AUTOPLAY_INTERVAL = 3000; // 3 seconds
 
 const Projects = () => {
   const [[activeIndex, direction], setSlide] = useState([0, 0]);
@@ -557,33 +557,6 @@ const Projects = () => {
             </span>
           </div>
         </div>
-
-        {/* ──── Bottom CTA ──── */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-24 text-center"
-        >
-          <div className="inline-flex flex-col items-center justify-center p-10 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/10 w-full max-w-3xl mx-auto backdrop-blur-md relative overflow-hidden">
-            {/* Glowing orb effect */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#ff2a2a] opacity-10 blur-[100px] rounded-full pointer-events-none" />
-            
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-6">
-              Let's build something amazing together.
-            </h3>
-            <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-            </p>
-            <a 
-              href="#contact"
-              className="px-8 py-4 rounded-full bg-white text-black font-bold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]"
-            >
-              Start a Conversation
-            </a>
-          </div>
-        </motion.div>
 
       </div>
     </section>
